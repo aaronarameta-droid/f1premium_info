@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="wallet.title">Configuración de wallet</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+
+  <style>
+    .wallet-manual {
+      display: flex;
+      flex-direction: column;
+      gap: 42px;
+      width: 100%;
+      margin-top: 32px;
+    }
+
+    .manual-page {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .manual-page img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+    }
+
+    .wallet-extra-captions {
+      margin-top: 18px;
+      padding: 22px 26px;
+      border: 1px solid rgba(255, 0, 0, 0.45);
+      border-radius: 18px;
+      background: rgba(0, 0, 0, 0.72);
+      box-shadow: 0 0 22px rgba(255, 0, 0, 0.12);
+    }
+
+    .wallet-extra-captions[hidden],
+    .wallet-caption-lang[hidden] {
+      display: none !important;
+    }
+
+    .wallet-caption-title {
+      margin: 0 0 14px 0;
+      color: #ffffff;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .wallet-caption-list {
+      margin: 0;
+      padding-left: 22px;
+      color: #f4f4f4;
+      font-size: 1.03rem;
+      line-height: 1.65;
+    }
+
+    .wallet-caption-list li {
+      margin-bottom: 10px;
+    }
+
+    .wallet-caption-lang[data-lang="ar"] {
+      direction: rtl;
+      text-align: right;
+    }
+
+    .wallet-caption-lang[data-lang="ar"] .wallet-caption-list {
+      padding-left: 0;
+      padding-right: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .wallet-extra-captions {
+        padding: 18px 18px;
+      }
+
+      .wallet-caption-title {
+        font-size: 1.02rem;
+      }
+
+      .wallet-caption-list {
+        font-size: 0.96rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="logo-f1.png" alt="F1 Premium" class="logo-img">
+      <span class="logo-text">F1 Premium</span>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+        <li><a href="about.html" data-i18n="nav.about">¿Qué es F1 Premium?</a></li>
+        <li><a href="how-it-works.html" data-i18n="nav.how">Cómo funciona</a></li>
+        <li><a href="wallet.html" data-i18n="nav.wallet">Configurar wallet</a></li>
+        <li><a href="register.html" data-i18n="nav.register">Registrarse</a></li>
+        <li><a href="backoffice.html" data-i18n="nav.backoffice">Back Office</a></li>
+        <li><a href="faq.html" data-i18n="nav.faq">Preguntas frecuentes</a></li>
+        <li><a href="testimonials.html" data-i18n="nav.testimonials">Testimonios</a></li>
+        <li><a href="legal.html" data-i18n="nav.legal">Aviso legal</a></li>
+      </ul>
+    </nav>
+
+    <div class="language-selector">
+      <select id="lang-select">
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+        <option value="de">DE</option>
+        <option value="ar">AR</option>
+        <option value="ro">RO</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="content-page">
+    <h1 data-i18n="wallet.title">Configurar tu wallet SafePal</h1>
+
+    <p data-i18n="wallet.intro">
+      Antes de registrarte en F1 Premium necesitas una wallet de autocustodia. SafePal es la opción recomendada por su soporte para la red opBNB y su facilidad de uso.
+    </p>
+
+    <section class="register-steps">
+      <section class="wallet-manual">
+
+        <!-- Imagen 1 -->
+        <div class="manual-page">
+          <img src="wallet/manual/wallet_step1.png"
+               alt="Manual SafePal paso 1 y 2"
+               loading="lazy">
+
+          <div class="wallet-extra-captions" hidden>
+            <div class="wallet-caption-lang" data-lang="de" hidden>
+              <p class="wallet-caption-title">Installation und Konfiguration für die Nutzung mit F1 Premium</p>
+              <ol class="wallet-caption-list">
+                <li>SafePal Wallet App herunterladen und installieren.</li>
+                <li>Auswählen: Neue Wallet erstellen.</li>
+              </ol>
+            </div>
+
+            <div class="wallet-caption-lang" data-lang="ro" hidden>
+              <p class="wallet-caption-title">Instalare și configurare pentru utilizarea cu F1 Premium</p>
+              <ol class="wallet-caption-list">
+                <li>Descărcați și instalați aplicația SafePal Wallet.</li>
+                <li>Selectați: Creați un portofel nou.</li>
+              </ol>
+            </div>
+
+            <div class="wallet-caption-lang" data-lang="ar" hidden>
+              <p class="wallet-caption-title">التثبيت والإعداد للاستخدام مع F1 Premium</p>
+              <ol class="wallet-caption-list">
+                <li>قم بتنزيل وتثبيت تطبيق SafePal Wallet.</li>
+                <li>اختر: إنشاء محفظة جديدة.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imagen 2 -->
+        <div class="manual-page">
+          <img src="wallet/manual/wallet_step2.png"
+               alt="Manual SafePal paso 3 y 4"
+               loading="lazy">
+
+          <div class="wallet-extra-captions" hidden>
+            <div class="wallet-caption-lang" data-lang="de" hidden>
+              <ol class="wallet-caption-list">
+                <li value="3">Erstelle ein sechsstelliges Passwort und bestätige es.</li>
+                <li>Auswählen: Sicherheitskopie erstellen.</li>
+              </ol>
+            </div>
+
+            <div class="wallet-caption-lang" data-lang="ro" hidden>
+              <ol class="wallet-caption-list">
+                <li value="3">Creați o parolă de șase cifre și confirmați-o.</li>
+                <li>Selectați: Faceți copie de siguranță.</li>
+              </ol>
+            </div>
+
+            <div class="wallet-caption-lang" data-lang="ar" hidden>
+              <ol class="wallet-caption-list">
+                <li value="3">أنشئ كلمة مرور مكوّنة من ستة أرقام وأكّدها.</li>
+                <li>اختر: عمل نسخة احتياطية.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imagen 3 -->
+        <div class="manual-page">
+          <img src="wallet/manual/wallet_step3.png"
+               alt="Manual SafePal paso 5 y 6"
+               loading="lazy">
+
+          <div class="wallet-extra-captions" hidden>
+            <div class="wallet-caption-lang" data-lang="de" hidden>
+              <ol class="wallet-caption-list">
+                <li value="5">Wähle die manuelle Sicherung aus.</li>
+                <li>Aktiviere die drei Optionen im unteren Bildschirmbereich, bestätige und gib das Passwort ein, wenn es abgefragt wird.</li>
+              </ol>
+            </div>
+
+            <div class="wallet-caption-lang" data-lang="ro" hidden>
+              <ol class="wallet-caption-list">
+                <li value="5">Selectați copia de siguranță manuală.</li>
+                <li>Activați cele trei opțiuni din partea de jos a ecranului, acceptați și introduceți parola care vi se va solicita.</li>
+              </ol>
+            </div>
+
+            <div class="wallet-caption-lang" data-lang="ar" hidden>
+              <ol class="wallet-caption-list">
+                <li value="5">اختر النسخ الاحتياطي اليدوي.</li>
+                <li>فعّل الخيارات الثلاثة الموجودة في أسفل الشاشة، ثم وافق وأدخل كلمة المرور عندما يُطلب منك ذلك.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imagen 4 -->
+        <div class="manual-page">
+          <img src="wallet/manual/wallet_step4.png"
+               alt="Manual SafePal paso 7 y 8"
+               loading="lazy">
+
+          <div class="wallet-extra-captions" hidden>
+            <div class="wallet-caption-lang" data-lang="de" hidden>
+              <ol class="wallet-caption-list">
+                <li value="7">Wir schreiben die zwölf Wörter auf ein Blatt Papier, bewahren sie dauerhaft sicher auf und drücken „Weiter“.</li>
+                <li>Wähle die Wörter in derselben Reihenfolge aus, in der du sie abgeschrieben hast, und tippe auf „Verifizieren“.</li>
+              </ol>
+            </div>
+
+            <div class="wallet-caption-lang" data-lang="ro" hidden>
+              <ol class="wallet-caption-list">
+                <li value="7">Copiem pe o foaie cele douăsprezece cuvinte pe care trebuie să le păstrăm pentru totdeauna și apăsăm „Următorul”.</li>
+                <li>Selectați cuvintele în aceeași ordine în care le-ați copiat și atingeți „Verificare”.</li>
+              </ol>
+            </div>
+
+            <div class="wallet-caption-lang" data-lang="ar" hidden>
+              <ol class="wallet-caption-list">
+                <li value="7">نكتب الكلمات الاثنتي عشرة على ورقة، ونحتفظ بها دائمًا في مكان آمن، ثم نضغط على «التالي».</li>
+                <li>اختر الكلمات بالترتيب نفسه الذي نسختها به، ثم اضغط على «تحقق».</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imagen 5 -->
+        <div class="manual-page">
+          <img src="wallet/manual/wallet_step5.png"
+               alt="Manual SafePal paso 11 y 12"
+               loading="lazy">
+
+          <div class="wallet-extra-captions" hidden>
+            <div class="wallet-caption-lang" data-lang="de" hidden>
+              <ol class="wallet-caption-list">
+                <li value="11">Oben, neben der Lupe, schreiben wir „op“ und wählen unten „BNB(opBNB)“ aus.</li>
+                <li>Oben, neben der Lupe, schreiben wir „usdt“ und wählen unten „USDT(opBNB)“ aus.</li>
+              </ol>
+            </div>
+
+            <div class="wallet-caption-lang" data-lang="ro" hidden>
+              <ol class="wallet-caption-list">
+                <li value="11">În partea de sus, lângă lupă, scriem „op”, iar jos selectăm „BNB(opBNB)”.</li>
+                <li>În partea de sus, lângă lupă, scriem „usdt”, iar jos selectăm „USDT(opBNB)”.</li>
+              </ol>
+            </div>
+
+            <div class="wallet-caption-lang" data-lang="ar" hidden>
+              <ol class="wallet-caption-list">
+                <li value="11">في الأعلى، بجانب العدسة المكبرة، نكتب «op»، ثم نختار في الأسفل «BNB(opBNB)».</li>
+                <li>في الأعلى، بجانب العدسة المكبرة، نكتب «usdt»، ثم نختار في الأسفل «USDT(opBNB)».</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imagen 6 -->
+        <div class="manual-page">
+          <img src="wallet/manual/wallet_step6.png"
+               alt="Manual SafePal paso 13"
+               loading="lazy">
+
+          <div class="wallet-extra-captions" hidden>
+            <div class="wallet-caption-lang" data-lang="de" hidden>
+              <ol class="wallet-caption-list">
+                <li value="13">Wenn unten der Bildschirm „Wallet“ ausgewählt ist, sehen wir einen Bildschirm wie in der Abbildung, mit den beiden Währungen BNB und USDT im opBNB-Netzwerk.</li>
+              </ol>
+            </div>
+
+            <div class="wallet-caption-lang" data-lang="ro" hidden>
+              <ol class="wallet-caption-list">
+                <li value="13">Pe ecranul „Wallet”, selectat jos, vom vedea un ecran ca cel din imagine, cu cele două monede BNB și USDT din rețeaua opBNB.</li>
+              </ol>
+            </div>
+
+            <div class="wallet-caption-lang" data-lang="ar" hidden>
+              <ol class="wallet-caption-list">
+                <li value="13">في شاشة «Wallet» المحددة في الأسفل، ستظهر شاشة مثل الموجودة في الصورة، وبها عملتا BNB و USDT على شبكة opBNB.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imagen 7 -->
+        <div class="manual-page">
+          <img src="wallet/manual/wallet_step7.png"
+               alt="Manual SafePal paso 14"
+               loading="lazy">
+
+          <div class="wallet-extra-captions" hidden>
+            <div class="wallet-caption-lang" data-lang="de" hidden>
+              <ol class="wallet-caption-list">
+                <li value="14">Du musst jetzt USDT und BNB aufladen, um auf F1 Premium zugreifen zu können. Du kannst sie über andere Kryptowährungs-Apps kaufen oder von der Person erhalten, die dich eingeladen hat. Die Einzelheiten vereinbarst du direkt mit dieser Person.</li>
+              </ol>
+            </div>
+
+            <div class="wallet-caption-lang" data-lang="ro" hidden>
+              <ol class="wallet-caption-list">
+                <li value="14">Trebuie să încarci acum USDT și BNB pentru a putea accesa F1 Premium. Le poți cumpăra prin alte aplicații de gestionare a criptomonedelor sau le poți primi de la persoana care te-a invitat. Detaliile le vei stabili direct cu acea persoană.</li>
+              </ol>
+            </div>
+
+            <div class="wallet-caption-lang" data-lang="ar" hidden>
+              <ol class="wallet-caption-list">
+                <li value="14">تحتاج الآن إلى شحن USDT و BNB حتى تتمكن من الوصول إلى F1 Premium. يمكنك شراؤهما من خلال تطبيقات أخرى لإدارة العملات الرقمية، أو استلامهما من الشخص الذي دعاك. سيتم الاتفاق على ذلك مباشرة مع هذا الشخص.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </section>
+
+    <div class="cta">
+      <h2 data-i18n="home.cta.title"></h2>
+      <p data-i18n="home.cta.desc"></p>
+      <div class="cta-buttons">
+        <a href="register.html" data-i18n="home.cta.button"></a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p data-i18n="footer.text"></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="romanian-fix.js"></script>
+
+  <script>
+    (function () {
+      const extraLanguages = ["de", "ro", "ar"];
+      const select = document.getElementById("lang-select");
+      const captionGroups = document.querySelectorAll(".wallet-extra-captions");
+      const captionBlocks = document.querySelectorAll(".wallet-caption-lang");
+
+      function getCurrentLanguage() {
+        if (select && select.value) {
+          return select.value;
+        }
+
+        if (document.documentElement.lang) {
+          return document.documentElement.lang;
+        }
+
+        return "es";
+      }
+
+      function updateWalletCaptions() {
+        const currentLang = getCurrentLanguage();
+        const shouldShowExtraCaptions = extraLanguages.includes(currentLang);
+
+        captionGroups.forEach(function (group) {
+          group.hidden = !shouldShowExtraCaptions;
+        });
+
+        captionBlocks.forEach(function (block) {
+          block.hidden = block.getAttribute("data-lang") !== currentLang;
+        });
+      }
+
+      if (select) {
+        select.addEventListener("change", function () {
+          setTimeout(updateWalletCaptions, 0);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", updateWalletCaptions);
+      window.addEventListener("load", updateWalletCaptions);
+
+      setTimeout(updateWalletCaptions, 100);
+      setTimeout(updateWalletCaptions, 300);
+    })();
+  </script>
+</body>
+</html>

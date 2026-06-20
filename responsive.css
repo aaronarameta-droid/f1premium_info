@@ -1,0 +1,71 @@
+/* Responsive styles to ensure images and content scale correctly */
+
+/* Prevent horizontal scrolling on narrow screens */
+/* Prevent horizontal scrolling on both html and body to avoid any overflow */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Make all images responsive so they never exceed their container */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Layout for register and wallet steps */
+/* Layout for register and wallet steps */
+.register-step,
+.wallet-step {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Image container takes roughly half of the width on large screens */
+/* On large screens each column takes up half minus the gap to prevent overflow */
+.register-step-image,
+.wallet-step-image {
+  box-sizing: border-box;
+  flex: none;
+  max-width: 100%;
+}
+
+/* Content container takes the remaining space */
+/* Content container also takes half minus the gap */
+.register-step-content,
+.wallet-step-content {
+  box-sizing: border-box;
+  flex: none;
+  max-width: 100%;
+}
+
+/* On smaller screens, stack image and content vertically */
+@media (max-width: 768px) {
+  .register-step-image,
+  .wallet-step-image,
+  .register-step-content,
+  .wallet-step-content {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Style captions for images */
+.image-caption {
+  font-size: 0.8rem;
+  color: var(--text-secondary, #ccc);
+  margin-top: 0.5rem;
+}
+
+/* Limit the width of images within register and wallet steps on large screens */
+.register-step-image img,
+.wallet-step-image img {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
