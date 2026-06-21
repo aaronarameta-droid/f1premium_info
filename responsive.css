@@ -1,71 +1,418 @@
-/* Responsive styles to ensure images and content scale correctly */
+/*
+  F1 Premium responsive layer
+  This file is loaded after style.css on the main pages and corrects the layout
+  for desktop, tablet and mobile without changing the visual identity.
+*/
 
-/* Prevent horizontal scrolling on narrow screens */
-/* Prevent horizontal scrolling on both html and body to avoid any overflow */
-html, body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   overflow-x: hidden;
 }
 
-/* Make all images responsive so they never exceed their container */
-img {
+body {
+  overflow-x: hidden;
+  min-width: 0;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
   max-width: 100%;
   height: auto;
 }
 
-/* Layout for register and wallet steps */
-/* Layout for register and wallet steps */
-.register-step,
-.wallet-step {
+img {
+  display: block;
+}
+
+a,
+button,
+select {
+  touch-action: manipulation;
+}
+
+/* Header and navigation */
+header {
+  gap: 1rem;
+  width: 100%;
+}
+
+header .logo {
+  min-width: 0;
+  flex: 0 0 auto;
+}
+
+.logo-text {
+  white-space: nowrap;
+}
+
+header nav {
+  flex: 1 1 720px;
+  min-width: 0;
+}
+
+header nav ul {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+header nav li {
+  margin: 0;
+}
+
+header nav a {
+  display: block;
+  white-space: nowrap;
+  line-height: 1.25;
+  border-radius: 6px;
+}
+
+.language-selector {
+  flex: 0 0 auto;
+  margin-left: 0;
+}
+
+.language-selector select {
+  min-height: 38px;
+}
+
+/* General page rhythm */
+main {
+  width: 100%;
+  max-width: 1480px;
+  margin-inline: auto;
+}
+
+.content-page {
+  max-width: 1180px;
+  margin-inline: auto;
+}
+
+.hero {
+  border-radius: 0 0 18px 18px;
+}
+
+.hero h1,
+.content-page h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+.hero p,
+.content-page p,
+.content-page li {
+  overflow-wrap: anywhere;
+}
+
+.hero .buttons,
+.cta .cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.hero .buttons a,
+.cta .cta-buttons a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.features,
+.circuits .circuit-list,
+.circuits-detail,
+.testimonials,
+.image-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1.25rem;
+}
+
+.feature-card,
+.circuit-item,
+.circuits-detail .circuit-detail,
+.testimonial-card,
+.image-row figure {
+  min-width: 0;
+}
+
+.circuits,
+.cta,
+.feature-card,
+.testimonial-card,
+.circuit-item,
+.circuits-detail .circuit-detail,
+.faq-item h3,
+.faq-item p,
+.manual-page,
+.wallet-extra-captions {
+  overflow-wrap: anywhere;
+}
+
+/* Register and wallet pages */
+.register-steps {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 2rem;
+  width: 100%;
 }
 
-/* Image container takes roughly half of the width on large screens */
-/* On large screens each column takes up half minus the gap to prevent overflow */
+.register-step,
+.wallet-step {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(280px, 1.05fr);
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 0;
+}
+
 .register-step-image,
-.wallet-step-image {
-  box-sizing: border-box;
-  flex: none;
-  max-width: 100%;
-}
-
-/* Content container takes the remaining space */
-/* Content container also takes half minus the gap */
+.wallet-step-image,
 .register-step-content,
 .wallet-step-content {
-  box-sizing: border-box;
-  flex: none;
+  min-width: 0;
   max-width: 100%;
 }
 
-/* On smaller screens, stack image and content vertically */
-@media (max-width: 768px) {
-  .register-step-image,
-  .wallet-step-image,
-  .register-step-content,
-  .wallet-step-content {
-    flex-basis: 100%;
-    max-width: 100%;
-  }
-}
-
-/* Style captions for images */
-.image-caption {
-  font-size: 0.8rem;
-  color: var(--text-secondary, #ccc);
-  margin-top: 0.5rem;
-}
-
-/* Limit the width of images within register and wallet steps on large screens */
 .register-step-image img,
 .wallet-step-image img {
   width: 100%;
-  max-width: 640px;
+  max-width: 680px;
   height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
+  border-radius: 12px;
+}
+
+.image-caption {
+  font-size: clamp(0.82rem, 2vw, 0.95rem);
+  color: var(--text-muted, #a3b1c6);
+  margin-top: 0.6rem;
+  line-height: 1.45;
+}
+
+.wallet-manual {
+  width: 100%;
+  max-width: 1320px;
+  margin: clamp(1.25rem, 4vw, 2.5rem) auto;
+  gap: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.manual-page {
+  width: 100%;
+  min-width: 0;
+}
+
+.manual-page img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.wallet-extra-captions {
+  max-width: 100%;
+}
+
+.wallet-caption-list {
+  padding-left: 1.25rem;
+}
+
+html[lang="ar"] .wallet-caption-list,
+[dir="rtl"] .wallet-caption-list {
+  padding-left: 0;
+  padding-right: 1.25rem;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  header .logo {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  header nav {
+    flex-basis: 100%;
+    order: 3;
+  }
+
+  .language-selector {
+    order: 2;
+  }
+
+  header nav ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+    gap: 0.45rem;
+  }
+
+  header nav a {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.55rem 0.65rem;
+    white-space: normal;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
+
+  .hero {
+    padding: 4.5rem 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  header {
+    padding: 0.9rem 0.85rem;
+    gap: 0.75rem;
+  }
+
+  header .logo {
+    font-size: 1.45rem;
+  }
+
+  header .logo img.logo-img {
+    height: 34px !important;
+    max-width: 96px !important;
+  }
+
+  header nav ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  header nav a {
+    font-size: 0.82rem;
+    padding: 0.55rem 0.45rem;
+  }
+
+  .language-selector select {
+    font-size: 0.95rem;
+    padding: 0.35rem 0.6rem;
+  }
+
+  main,
+  .content-page {
+    padding: 1rem;
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+    border-radius: 0 0 14px 14px;
+  }
+
+  .hero h1,
+  .content-page h1 {
+    line-height: 1.12;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .features,
+  .circuits .circuit-list,
+  .circuits-detail,
+  .testimonials,
+  .image-row {
+    grid-template-columns: 1fr;
+  }
+
+  .circuits,
+  .cta,
+  .feature-card,
+  .testimonial-card,
+  .manual-page {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .cta {
+    padding: 2rem 1rem;
+  }
+
+  .hero .buttons a,
+  .cta .cta-buttons a {
+    width: 100%;
+    max-width: 420px;
+    margin: 0;
+  }
+
+  .register-step,
+  .wallet-step {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .register-step-content,
+  .wallet-step-content {
+    text-align: left;
+  }
+
+  html[lang="ar"] .register-step-content,
+  html[lang="ar"] .wallet-step-content,
+  [dir="rtl"] .register-step-content,
+  [dir="rtl"] .wallet-step-content {
+    text-align: right;
+  }
+
+  .wallet-manual {
+    margin: 1rem auto;
+    gap: 1.25rem;
+  }
+
+  .wallet-extra-captions {
+    padding: 1rem;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 420px) {
+  header nav ul {
+    grid-template-columns: 1fr;
+  }
+
+  header nav a {
+    font-size: 0.9rem;
+  }
+
+  .logo-text {
+    font-size: 1.25rem;
+  }
+
+  main,
+  .content-page {
+    padding: 0.75rem;
+  }
+
+  .hero {
+    padding: 2.35rem 0.75rem;
+  }
+
+  .circuits,
+  .cta,
+  .feature-card,
+  .testimonial-card,
+  .manual-page {
+    padding: 0.85rem;
+  }
 }
